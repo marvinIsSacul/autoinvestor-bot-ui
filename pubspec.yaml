@@ -15,6 +15,11 @@ dependencies:
  
   flutter_svg_provider: ^0.1.8 # to use svg images
   google_fonts: ^1.1.2 # to import google fonts and text theme 
+  http: ^0.12.2
+  animated_bottom_navigation_bar: ^1.0.0
+  floating_bottom_navigation_bar: ^1.5.2
+  localstorage: ^4.0.0+1
+  sticky_grouped_list: ^3.0.0
 
 dev_dependencies:
   flutter_test:

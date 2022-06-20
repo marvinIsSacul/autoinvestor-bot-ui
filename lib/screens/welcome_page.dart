@@ -5,9 +5,12 @@ import '../screens/screen.dart';
 import '../widgets/widget.dart';
 
 class WelcomePage extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -60,10 +63,22 @@ class WelcomePage extends StatelessWidget {
                         bgColor: Colors.white,
                         buttonName: 'Register',
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => RegisterPage()));
+                          // Navigator.push(
+                          //     context,
+                          //     CupertinoPageRoute(
+                          //         builder: (context) => RegisterPage()));
+
+                          this
+                              .scaffoldKey
+                              .currentState
+                              .showSnackBar(new SnackBar(
+                                duration: new Duration(seconds: 1),
+                                content: new Row(
+                                  children: <Widget>[
+                                    new Text("Working in progress...")
+                                  ],
+                                ),
+                              ));
                         },
                         textColor: Colors.black87,
                       ),

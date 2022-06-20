@@ -6,16 +6,19 @@ class MyPasswordField extends StatelessWidget {
     Key key,
     @required this.isPasswordVisible,
     @required this.onTap,
+    this.textEditingController,
   }) : super(key: key);
 
   final bool isPasswordVisible;
   final Function onTap;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
+        controller: this.textEditingController,
         style: kBodyText.copyWith(
           color: Colors.white,
         ),

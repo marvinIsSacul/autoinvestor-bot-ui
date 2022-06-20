@@ -7,9 +7,11 @@ class MyTextField extends StatelessWidget {
     Key key,
     @required this.hintText,
     @required this.inputType,
+    this.textInputController,
   }) : super(key: key);
   final String hintText;
   final TextInputType inputType;
+  final TextEditingController textInputController;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class MyTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         style: kBodyText.copyWith(color: Colors.white),
+        controller: this.textInputController,
         keyboardType: inputType,
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
